@@ -3,33 +3,28 @@
 #include<string>
 using namespace std;
 
-void print(char* message) {
-	cout<<message<<endl;
-}
 
-double getValue(char* message) {
-	print(message);
-	double value {};
-	cin >> value;
-	return value;
+void print(string msg) {
+	cout << msg << endl;
 }
-
-int getInteger(string question){
-	cout<<question<<endl;
-	int res{0};
-	cin >> res;
-	return res;
-}
-
-string getString(string question){
-	cout<<question<<endl;
+//Book is a class, Library another class that contain books. 
+string getString(string message) {
 	string answer;
-	cin>>answer;
+	cout << message << endl;
+	cin >> answer;
 	return answer;
 }
-char getChar(char* message) {
-	print(message);
-	char op;
-	cin >> op;
-	return op;
+
+int getNumber(string message) {
+	int answer = 0;
+	cout << message << endl;
+	cin >> answer;
+	return answer;
+}
+
+double getDouble(string message) {
+	double answer = 0.0;
+	cout << message << endl;
+	cin >> answer;
+	return answer;
 }
