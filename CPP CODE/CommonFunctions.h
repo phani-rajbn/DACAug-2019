@@ -1,6 +1,8 @@
 #pragma once
-#include<iostream>
 #include<string>
+#include<iostream>
+#include<fstream>//This is required for File IO classes....
+#include<sstream>
 using namespace std;
 
 
@@ -27,4 +29,19 @@ double getDouble(string message) {
 	cout << message << endl;
 	cin >> answer;
 	return answer;
+}
+
+
+class employee {
+public:
+	int id;
+	string name, address;
+	double salary;
+};
+
+void print(employee emp) {
+	cout << "Name:" << emp.name << endl;
+	cout << "Address:" << emp.address << endl;
+	cout << "Salary:" << emp.salary << endl;
+	cout << "Id:" << emp.id << endl;
 }
