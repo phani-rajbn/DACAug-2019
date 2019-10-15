@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classes And Objects</title>
+	<style type="text/css">
+		div{
+			vertical-align: top;
+			width: 45%;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<table id="table" border="1">
+		<tr >
+			<th>BookID</th>
+			<th>BookTitle</th>
+			<th>Book Price</th>
+			<th>Options</th>
+		</tr>
+	</table>
+</div>
+<div>
+	<h1>Edit details</h1>
+	<p><input placeholder="ID the Book"></p>
+	<p><input placeholder="Title the Book"></p>
+	<p><input placeholder="Price the Book"></p>
+	<p><button>Update changes</button></p>
+</div>
+<script type="text/javascript">
+		var book = function(id, title, cost){
+			this.bookID = id;
+			this.bookTitle = title;
+			this.bookPrice = cost;
+		}
+
+		var books = [];
+		var book1 = new book(123, "JavaScript Basics", 560);
+		var book2 = new book(124, "Learning HTML", 460);
+		var book3 = new book(125, "NodeJs Examples", 520);
+		var book4 = new book(126, "Angular HandsOn", 580);
+
+		books.push(book1);
+		books.push(book2);
+		books.push(book3);
+		books.push(book4);
+
+		var tbl = document.getElementById("table");
+		for (var i = 0; i < books.length; i++) {
+			var bk = books[i];
+			var tr = "<tr><td>" + bk.bookID + "</td><td>";
+			tr += bk.bookTitle + "</td><td>";
+			tr += bk.bookPrice + "</td><td>";
+			tr += "<a href='#'>Edit</a></td></tr>";
+			tbl.innerHTML += tr;
+		}
+	</script>
+</body>
+</html>

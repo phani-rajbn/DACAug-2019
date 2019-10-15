@@ -1,0 +1,39 @@
+<script type="text/javascript">
+/*
+	var numbers = [123,234,345,345,234,234];
+	//Syntax of creating Array...
+	for (var i = 0; i < numbers.length; i++) {
+		console.log(numbers[i]);
+	}//Accessing elements thro index...
+
+	//creating dynamic Array....
+	var items = [];//blank array in JS...
+	items.push("Apple");//Adds an element to the bottom of the List...
+	items.push("Basket");
+	items.push("Sugar");
+	items.push("Coffee");
+	alert(items.length + " is the no of items in the list");
+	var name = prompt("Enter the Name of the item to find its index");
+	//indexOf gets the index of the element, if no element is found returns -1.
+	var index = items.indexOf(name);
+	if(index < 0)
+	 	alert("Invalid Choice");
+	 else {
+	 	alert("The index of the selected item is " + index + " and will remove from the collection");
+	 	items.splice(index, 1);//splice is used to remove or replace the element from the specific index. 1 tells the no of elements to be removed or replaced. 3rd optional Arg contains the elements to be replaced.
+ 	}
+
+ 	for(index in items){
+ 		alert(items[index]);
+ 	}
+ 	*/
+ 	var fruits = [];
+ 	function addToBasket(){
+ 		var fruit = document.getElementById("fruit").value
+ 		fruits.push(fruit);
+ 		var list = document.getElementById("lstCart");
+ 		list.innerHTML +='<li>' + fruit + '<a href="#">X</a></li>';
+ 	}
+</script>
+<input type="text" placeholder="Enter the Fruit" id="fruit"><button onclick="addToBasket()">Add to Basket</button>
+<ol id="lstCart"/>

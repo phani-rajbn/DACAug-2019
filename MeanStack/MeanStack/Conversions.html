@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	var value = parseInt(prompt("Enter the first Value"));
+	var value2 = parseInt(prompt("Enter the second value"));
+//parseFloat is used to convert a string to its decimal value and retain the decimal content. parseInt will convert the variable to number and removing all the decimal values from the variable. 
+//If a variable cannot be converted to a valid number, js sets the value as NAN(Not A Number). We use this to determine whether a value is entered or not by the user. 
+//IsNan() is used to check for NAN. 
+	if(isNaN(value))
+		console.log("It is not a number");
+	if(isNaN(value2))
+		console.log("It is not a number");	
+ 	console.log(typeof(value))
+	console.log(typeof(value2))
+	console.log("The added value is " + (value + value2));
+	console.log("The subtracted value is " + (value - value2));
+	console.log("The multiplied value is " + (value * value2));
+	console.log("The divided value is " + (value / value2));
+</script>

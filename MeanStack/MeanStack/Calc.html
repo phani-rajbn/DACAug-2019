@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyCalc Program</title>
+	<style>
+		*{
+			background-color:lightblue;
+			color:blue;
+			padding: 5px;
+			margin: 5px;
+		}
+		div{
+			border:2px solid red;
+			border-radius: 10px;
+			width: 50%;
+		}
+		.err{
+			color:indianRed;
+			font-size: xx-large;
+			font-family: "Courier-New";
+		}
+	</style>
+	<script src="Scripts/math.js"></script>
+	<script type="text/javascript">
+		//get the first value from the input
+		function performOperation(){
+		var first = parseFloat(document.getElementById('first').value);
+		var second = parseFloat(document.getElementById('second').value);//get the second value from the input
+		var operand = document.getElementById('operand').value;//get the operand value from the input
+		
+		//Call the process function
+		try{
+			var result = process(first, second, operand);
+			var spNode = document.getElementById("spDisplay");
+			spNode.innerText = result;
+		}catch(err){
+			var spNode = document.getElementById("spErr");
+			spNode.innerText = err;
+		}
+	}
+		//result will be displayed in the span
+	</script>
+</head>
+<body>
+	<h1>My Calc Program</h1>
+	<div>
+		<p><input type="number" id="first" placeholder="Enter the first value"></p>	
+		<p><input type="number" id="second" placeholder="Enter the second value"></p>
+		<p>
+			<select id="operand">
+				<option>Add</option>
+				<option>Subtract</option>
+				<option>Multiply</option>
+				<option>Divide</option>
+			</select>.com
+		</p>
+		<p>
+			<button id="btnProcess" onclick="performOperation()">Get Result</button>
+		</p>
+		<p>
+			The Final Result:<span id="spDisplay"></span>
+		</p>
+		<p>
+			<span id="spErr" class="err">
+			</span>
+		</p>
+	</div>
+</body>
+</html>
