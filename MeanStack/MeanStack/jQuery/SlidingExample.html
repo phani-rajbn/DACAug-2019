@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sliding Example</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("h1").click(function(){
+				//$(this).next().slideToggle();
+				$(this).next().fadeToggle();
+				//fade gives the appearance as delayed visibility feature.(fadeIn and fadeOut uses the CSS's visible property whereas the slideUp and slideDown uses the CSS's display property to provide animated feature). 
+			})
+		})//ready function will be triggered only after the whole dom structure is ready...
+	</script>
+</head>
+<body>
+	<h1>This is div 1</h1>
+	<div>
+		<p>Some Content here</p>
+	</div>
+		<h1>This is div 2</h1>
+	<div>
+		<p>Some other content here</p>
+	</div>
+		<h1>This is div 3</h1>
+	<div>
+		<p>New Content here</p>
+	</div>
+</body>
+</html>

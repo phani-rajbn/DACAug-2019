@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="../Scripts/LambdaExample.js"></script>
+	<script src="../Scripts/Common.js"></script>
+	<script type="text/javascript">
+		function populate(data){
+			$("lstSearch").innerHTML="";
+			data.forEach((e,i)=>{
+				$("lstSearch").innerHTML += "<li>" + e + "</li>";
+			});
+		}
+		window.addEventListener("load", ()=>{
+			var data = getAllRecords();
+			populate(data);
+			$("txtSearch").addEventListener('keyup', ()=> {
+				var data = filterRecords($("txtSearch").value);
+				populate(data);
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="search" placeholder="Search" id="txtSearch">
+	<hr/>
+	<ol id="lstSearch"></ol>
+</body>
+</html>

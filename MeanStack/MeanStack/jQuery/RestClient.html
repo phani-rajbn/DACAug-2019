@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var url = "http://localhost:8080/pHpDac/dbrestSErvice.php";
+			$.get(url, function(data){
+				var collection = JSON.parse(data);
+				//data is the data that comes from that HTTP REQUEST...
+				$.each(collection, function(i, e){
+					var row = '<tr><td>' + e.empID + "</td><td>";
+					row += e.empName + "</td><td>";
+					row += e.empAddress + "</td><td>";
+					row += e.empSalary + "</td></tr>";
+					$("table").append(row);
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<table border="1" width="100%">
+		<tr>
+			<th>EmpID</th>
+			<th>EmpName</th>
+			<th>EmpAddress</th>
+			<th>EmpSalary</th>
+		</tr>
+	</table>
+</body>
+</html>

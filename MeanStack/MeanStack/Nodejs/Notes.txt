@@ -1,0 +1,24 @@
+//Notes.txt
+Nodejs: 
+Technically JS is designed to be executed in the browser. With Nodejs, we could now execute JS code out of the browser either from a Cmd prompt or from any file. 
+Nodejs is a platform built on Chrome's JavaScript v8 Engine for building fast scalable Network based Applications using JS. 
+It uses Event driven, non blocking IO model that makes it light weight and efficient, perfect for data intensive real time apps that run on multiple devices. 
+It means that U can create JS Applications on the server side. 
+Developed by Ryan Dahl of Joyant Technologies in 2009. Currently maintained by Joyant technologies. It uses the ES5 stds. 
+The coding is based on module system that comes from another framework called CommonJS. 
+Every code of Nodejs written in JS will be distributed in the form of MODULE. Each module is a self contained code to perform certain task. 
+Nodejs has to be installed in UR machine and its path is configured to be used from the Cmd Prompt. U might have to set the PATH variable of the Environment to use Nodejs commands from the Cmd.
+Nodejs would be downloaded from Nodejs.org. It comes with an MSI file that must be installed in UR installation Drive.
+U must set the Environment Variable called PATH with the location of the Node.exe which is the execution command for Nodejs. 
+Once set, U could use Node command from any location of ur OS. 
+Node REPL helps in reading the command, evaluating it, printing the output and maintain a loop till the user exits the Nodejs prompt. 
+Nodejs Environment can be exited using Ctrl+C.
+UR files will be saved as .js. and will be executed from the cmd window.  
+
+challenges: 
+how to use a JS code inside another js file?
+
+JS code in nodejs is exposed thro modules. Nodejs has global object calle module.exports. using this U could create a module, and use that module using require('./modulename'); So that, the functions can be refered thro the object obtained from the require command. 
+--------------------BuiltIn Modules----------------
+Nodejs gives a large no of modules for interacting with UR OS and functionalities to operate. It has APIs for performing fileIO, Event handling, Http Servers, OS related activities, Formating Activities, IPC Activities and many more. 
+    

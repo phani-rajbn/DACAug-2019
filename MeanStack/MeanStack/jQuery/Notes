@@ -1,0 +1,26 @@
+Challenges of JS while working with DOM Elements?
+Lengthy code for DOM Manipulations. 
+Repeated Code while implementing dynamic HTML. 
+Accessing multiple elements is cumbersome.
+U depend more on IDs of the elements. U end up creating IDs for all the elements on which U wish to perform some dynamic operation. 
+
+jQuery is JS Library for providing fns to manipulate the DOM elements with less code and more functionality. jQuery is JS code only. u can mix jQuery functions and JS functions. jQuery itself is written in JS. 
+
+How to download jQuery?
+Download it from jquery.com where U can place the Js minified version in our current directory and deploy it while U deploy UR Application. In this case, U will be responsible to share the jQuery file along with any content of ur App. 
+In real time Apps, U would link the jQUery to a CDN(Content delivery network) which allows the library to be downloaded from the cloud. In this case, the Cloud providers would use CDN network servers that are placed across the globe and the App would pick from the closest location of the server from it. If the library is already downloaded by another app, U could still use it as it will be in the temp internet folders and will be shared by UR App also without a need to download it again. 
+
+Features:
+Write less do more. 
+library is small, fast and light-weight.
+Used mainly for manipulating DOM Elements with very less code. 
+Animation features in HTML. 
+Perform AJAX Operations with helper functions. 
+
+PS: Ajax is a way of calling server side APIs in an Asynchronous manner. In this case, only a part of the page would go to the server for processing instead of the whole page. the technology is based on XML with Async JS to perform the operations. Hense the name AJAX(Asynchronous JS and XML). Instead of regular HTTP Requests, Ajax uses XHR(Xml Http Requests) for performing Async operations. 
+
+jQuery was released in 2006 by John Resig at BarCamp NYC. It is currently maintained by a team headed by Timmy Wilson. jQuery is now internally used by most of the web sites directly or indirectly. Current version is 3.4.x.
+
+
+
+

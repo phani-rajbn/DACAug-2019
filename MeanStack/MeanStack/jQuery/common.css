@@ -1,0 +1,21 @@
+*{
+	background-color: gold;
+	color:red;
+	padding: 5px;
+	margin:5px; 
+}
+div{
+	width: 45%;
+	vertical-align: top;
+	height: 300px;
+	border: 3px solid blue;
+	display: inline-block;
+}
+.header{
+	text-align: center;
+	background-color: lightyellow;
+	color:blue;
+	padding: 15px;
+	margin:15px;
+	font-size: xx-large;	
+}

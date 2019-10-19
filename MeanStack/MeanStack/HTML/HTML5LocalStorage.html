@@ -1,0 +1,22 @@
+<script src="../Scripts/Common.js"></script>
+<script>
+	window.addEventListener("load", function(){
+		click("btnSave", ()=>{
+			localStorage.setItem("Data", $("txtName").value);
+			alert("Data is saved");
+		})
+		var stored = localStorage.getItem("Data");
+		if(stored == undefined)
+			return;
+		else
+			$("spName").innerText = stored;
+	});
+</script>
+<p>
+	Enter the Name:
+	<input type="text" id="txtName">
+	<button id="btnSave">Save</button>
+</p>
+<p>
+	The Saved name: <span id="spName"></span>
+</p>

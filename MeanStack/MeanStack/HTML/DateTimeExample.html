@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date and Time in JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function getDateFormat(date){
+			var dateFormat = date.getDate() + "/" + (date.getMonth() + 1) +"/" + date.getFullYear();
+			return dateFormat;
+		}
+		//Date is a JS builtin object to perform Date and Time operations in HTML Document. Its default constructor allows to extract the System date and Time. 
+		var date = new Date();
+		document.write(date + "<br/>");
+		document.write(date.getFullYear() + "<br/>")
+		document.write((date.getMonth() + 1) + "<br/>");
+		//getMonth gets the no of the month starting with 0, jan will be 0 and dec will be 11. 
+		document.write(date.getDate() + "<br/>")
+		document.write("<hr/>");
+		
+		document.write(getDateFormat(date) +"<br/>");
+		date = new Date(2018, 7, 21);
+		document.write("The selected date: " + getDateFormat(date))
+		//DateDiff functionality....
+		//Provide a function that takes 2 dates are arg and return the difference of the no of Years.
+		//U can overload the function to take arg of choice where mm should give the no of months as difference, so with days.
+		//PS: There are no builtin functions to perform the date Diff operation in JS...
+	</script>
+</body>
+</html>

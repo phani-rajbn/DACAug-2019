@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Example</title>
+	<script src="jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script>
+		//load the jQUery library..
+		function onLoad(){
+			//alert("Test 123");
+			//getElementsByTagName
+			/*$("div").mouseover(function(){
+				$(this).css("background-color", "blue");
+			})
+			$("div").mouseleave(function(){
+				$(this).css("background-color", "gold");
+			})*/
+			$("div").hide(2000);
+			$("a:eq(0)").click(function(){
+				$("div").hide(2000);
+				$("div:eq(0)").show(2000);
+			});
+			$("a:eq(1)").click(function(){
+				$("div").hide(2000);
+				$("div:eq(1)").show(2000);
+			});
+			$("a:eq(2)").click(function(){
+				$("div").hide(2000);
+				$("div:eq(2)").show(2000);
+			});
+			
+		}
+	//However U could provide a lambda Expression for the function instead of an explicit Func....
+		$(document).ready(()=>{
+			onLoad();
+		});
+	</script>
+</head>
+<body>
+	<p class="header">
+		<a href="#">Div1</a>
+		<a href="#">Div2</a>
+		<a href="#">Div3</a>
+	</p>
+	<div>
+		<h1>This is div 1</h1>
+	</div>
+	<div>
+		<h1>This is div 2</h1>
+	</div>
+	<div>
+		<h1>This is div 3</h1>
+	</div>
+</body>
+</html>

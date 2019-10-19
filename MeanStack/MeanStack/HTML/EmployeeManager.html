@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Monitoring System</title>
+	<script src="../Scripts/employee.js"></script>
+	<script src="../Scripts/Common.js"></script>
+	<script>
+		var empData = new EmpRepository();//object of the Emprepository class...
+
+		//DOM uses Events which is handled thro Event Handlers. load is an event that occurs when the Browser Window loads the HTML document. 
+		function hideAll(){5
+			var divs = document.getElementsByTagName("div");
+			debugger;
+			for (var i = 0; i < divs.length; i++) {
+				divs[i].style.display = 'none';
+			}
+		}
+		function displayTable(){
+			hideAll()
+			debugger;
+			$("tblRecords").innerHTML = "<tr><th>Employee ID</th><th>Employee Name</th><th>Employee Address</th><th>Options</th></tr>";
+			
+			$("divTable").style.display="inline-block";
+			for (var i = 0; i < empData.data.length; i++) {
+				var emp = empData.data[i];
+				var tr = '<tr><td>' + emp.empId + '</td><td>';
+				tr += emp.empName + '</td><td>';
+				tr += emp.empAddress + '</td><td>';
+				tr += '<a href="#" class="edit" recId ="' + emp.empId + '">Edit</a></td></tr>';
+				$("tblRecords").innerHTML += tr;
+			}
+			//getElementsByClassName returns an HTML Collection of all the elements which have the class called edit. In this example, all a tags with edit class will be made available thro a HTMLCollection. innerText would return the content of the anchor tag...
+			var allAnchors = document.getElementsByClassName("edit");
+			editClick(allAnchors, function(){
+				//var selectedId = this.parentNode.parentNode.children[0].innerText;
+				var selectedId = this.getAttribute("recId");
+				var selectedEmp = empData.find(selectedId);
+				hideAll();
+				$('divUpdate').style.display="inline-block";
+				$("txtOldID").value = selectedEmp.empId;
+				$("txtOldName").value = selectedEmp.empName;
+				$("txtOldAddress").value = selectedEmp.empAddress;
+			})
+			/*for(var i =0; i < allAnchors.length; i++){
+				alert(allAnchors[i].innerText);
+			}*/
+		}
+
+		function addRecord(){
+			//get all the values of the user..
+			var id = parseInt($("txtID").value);
+			var name = $("txtName").value;
+			var address = $("txtAddress").value;
+			var emp = new employee(id, name, address);
+			//create the employee object
+			//call the addEmployee function of the repository class..
+			empData.addEmployee(emp);
+			displayTable();
+		}
+		function init(){
+			hideAll();
+			//alert("Test123");try this first....
+			click('aTable', ()=>{ 
+				hideAll();
+				$("divTable").style.display ="inline-block";
+				displayTable();
+			});		
+			click('aNew', ()=>{ hideAll();
+				$("divAdd").style.display ="inline-block"; });			
+			click('aAbout', ()=>{ alert("CDAC MeanStack Training")});
+		}
+		//window.addEventListener("load", init);
+		window.addEventListener("load", function(){
+			init();
+			/*$("btnRegister").addEventListener("click", ()=>{
+				alert("Button was clicked")
+			})*/
+			click("btnRegister", addRecord)			
+		})			
+	</script>
+
+	<style>
+		*{
+			background-color: lightGreen;
+			color:darkGreen;
+			padding: 5px;
+			margin: 5px;
+		}
+		div{
+			display:inline-block;
+			width: 45%;
+			vertical-align: top;
+		}
+		h1, p{
+			background-color: yellow;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Employee Monitoring System</h1>
+	<p>
+		<a id="aTable" href="#">Show All Records</a>
+		<a id ="aNew" href="#">Add New Record</a>
+		<a id="aAbout" href="#">About Us</a>
+	</p>
+	<div id="divTable">
+		<h1>Table of Records</h1>
+		<table id="tblRecords" border="1">
+			
+		</table>
+	</div>
+	<div id="divAdd">
+		<h1>Register new Employee</h1>
+		<p><input type="number" id="txtID" placeholder="Enter the Id"></p>
+		<p><input type="text" id="txtName" placeholder="Enter the Name"></p>
+		<p><input type="text" id="txtAddress" placeholder="Enter the Address"></p>
+		<button id="btnRegister">Register</button>
+	</div>
+	<div id="divUpdate">
+		<h1>Update Old Employee</h1>
+		<p><input type="number" id="txtOldID" placeholder="Enter the Id"></p>
+		<p><input type="text" id="txtOldName" placeholder="Enter the Name"></p>
+		<p><input type="text" id="txtOldAddress" placeholder="Enter the Address"></p>
+		<button id="btnUpdate">Update</button>
+	</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Registration</title>
+	<link rel="stylesheet" type="text/css" href="common.css">
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		var inputs = [];
+		//localStorage stores the data as key-value pairs where the value will be string or String representation(JSON). 
+		function saveRecords(){
+			var value = JSON.stringify(inputs);
+			localStorage.setItem("Data", value);
+		}
+
+		function loadRecords(){
+			//reverse of storing...
+			var value = localStorage.getItem("Data");
+			if(value != null){
+				inputs = JSON.parse(value);
+			}else
+				inputs = [];
+		}
+
+		function populateTable(){
+			loadRecords();
+			$("table").find("tr:gt(0)").remove();
+			$.each(inputs, (i , e)=>{
+				debugger;
+				var row = "<tr><td>" + e.name + "</td><td>";
+				row += e.email + "</td><td>";
+				row += e.loc + "</td><td>";
+				row += "<a href='#' class='edit'>Edit</td><td>";
+				$("table").append(row);
+				//elementsByClassName...
+				
+			});
+			$(".edit").click(function(){
+				$("div").hide();
+				$("div:eq(2)").show(2000);
+				var name = $(this).parent().siblings("td:eq(0)").text();//innerText
+				var email = $(this).parent().siblings("td:eq(1)").text();
+				var loc = $(this).parent().siblings("td:eq(2)").text();
+				$("#txtOldName").val(name);//set the value
+				$("#txtOldEmail").val(email);
+				$("#txtOldLoc").val(loc);
+
+
+				$("button:eq(1)").click(function(){
+				//loadRecords from the ls....
+				loadRecords();
+				var name = $("#txtOldName").val();
+				var email = $("#txtOldEmail").val();
+				var loc = $("#txtOldLoc").val();
+				//find the record matching to the email
+
+				var rec = inputs.find((e)=>  e.email == email);
+				//update the record
+				rec.name = name;
+				rec.loc = loc;
+				//save it back to the ls....
+				saveRecords();
+				alert("Records are saved<br/>Click on Show All to view the updated records");
+				$("div").hide();
+			})
+			})
+		}
+		$(document).ready(function(){
+			$("div").hide();
+			$("a:first").click(function(){
+				populateTable();
+				$("div:eq(1)").show(2000);
+			});
+			$("a:eq(1)").click(function(){
+				$("div").hide();
+				$("div:eq(0)").show(2000);
+				$("button").first().click(function(){
+					var name = $("#txtName").val();
+					var email = $("#txtEmail").val();
+					var loc = $("#txtLoc").val();
+					//# is prefixed to find an element by id in jquery... 
+					var temp = { "name" : name, "email" : email, "loc" : loc};
+					//alert(temp);
+					inputs.push(temp);
+					saveRecords();
+					populateTable();
+				});
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<h1 class="header">Employee Registration System</h1>
+	<p class="header">
+		<a href="#">Show All Records</a>
+		<a href="#">Add New Record</a>
+		<a href="#">About Us</a>
+	</p>
+	<div>
+		<h1>Add new Registration</h1>
+		<p>Enter the Name: <input type="text" id="txtName"></p>
+		<p>Enter the Email: <input type="email" id="txtEmail"></p>
+		<datalist id="dtPlaces">
+			<option>Bangalore</option>
+			<option>Mysore</option>
+			<option>Mangalore</option>
+			<option>Goa</option>
+			<option>Vadodara</option>
+			<option>Pune</option>
+			<option>Mumbai</option>
+			<option>Hyderabad</option>
+		</datalist>
+		<p>Enter the Location: <input list="dtPlaces" type="text" id="txtLoc"></p>
+		<p><button>Submit</button></p>
+	</div>
+	<div>
+		<table border="1" width="100%">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Location</th>
+				<th>Options</th>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<h2>Edit Details</h2>
+		<p>Enter the Name: <input type="text" id="txtOldName"></p>
+		<p>Enter the Email: <input type="email" id="txtOldEmail"></p>
+		<datalist id="dtPlaces">
+			<option>Bangalore</option>
+			<option>Mysore</option>
+			<option>Mangalore</option>
+			<option>Goa</option>
+			<option>Vadodara</option>
+			<option>Pune</option>
+			<option>Mumbai</option>
+			<option>Hyderabad</option>
+		</datalist>
+		<p>Enter the Location: <input list="dtPlaces" type="text" id="txtOldLoc"></p>
+		<p><button>Submit</button></p>
+	</div>
+</body>
+</html>

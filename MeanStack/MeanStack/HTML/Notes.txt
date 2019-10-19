@@ -1,0 +1,91 @@
+limitations of HTML:
+HTML is static content. 
+To generate dynamic content, U need Scripting language. 
+Clientside and Server side scripting language. 
+Advantages of client side scripting:
+The contents dont need to go to the server for processing.
+Pages become user interactive. 
+No need for any extra network traffic.
+Client side scripting languages are simple and easy to use. U
+U dont need extra software other than the browser itself.
+limitations:
+JS does not have any IO related operations: File IO, Database and storage capabilities.
+This is where server side scripting comes into picture.
+However U have now a range of JS frameworks that will help in overcoming these problems(Nodejs).    
+
+MeanStack course:
+JavaScript(Fundamental programming language), jQuery(Library for JS to perform DOM Operations), Nodejs(Develop JS code on Server side), Angular(Client Side binding technology and Framwork developed by GOOGLE), MongoDB(Database based on JS Collections) and JasmineJS(Unit Testing framework).
+
+What is JS? 
+JS is a scripting language to developing dynamic content to the web pages without any additional software like a web server. It is object based Scripting language which is light weight and cross platform. There is no relation b/w Java and JavaScript.
+It is recommended by w3c for all the browsers. It means that JS is available in all the browsers unlike VBScript which is specific only to MS specific browsers.
+JS is the most popular Client side Scripting language.   
+
+Application of JS in real time is done for doing the following things:
+Process Web Forms on the client side before its processed in the server.
+Client side validations. 
+Generating Dynamic HTML. 
+User interactive popups like alerts, prompts and many more. 
+Dynamic Drop downs and Date Time operations.  
+
+What do U learn in JS?
+Creating JS code in HTML. 
+External JS files creations and its useage.
+Variables, Scope of the variables. 
+Arrays and other collection features.
+Creating functions and classes.  
+Objects, Date, Math
+DOM Manipulations using document object. 
+
+Software requirements:
+Any Text editor and any browser. Use chrome for debugging. 
+
+Where will js code run?
+JS code is processed only in a browser. If a code has to be tested, the code should be embedded inside an HTML Page and viewed in a browser.
+PS:JS  is not a compiler language, its an interpreted language. The browsers will have a Translator which is responsible to translate the JS code into an HTML output for the web browser. 
+
+
+Places where we can embedd the JS code:
+In the head segment.
+In the body segment just before the closure of the body tag(Most recommended).
+
+NOTE: Code written in one HTML File cannot be used inside another HTML page. 
+Commonly used functions could be created as a Seperate JS files with an extension(.js) and insert the files in the script tag using an attribute called src. src would contain the actual location(relative or absolute) of the JS file. 
+
+Predefined UI related pop-up functions:
+alert: Display messages.
+prompt: Take inputs with a question which returns the value entered by the user as string.
+confirm: Message with ok or cancel. This function returns true or false, true for OK and False for cancel.
+
+Variables in JS:
+var is used to create variables inside JS. From ES6, let is used which has more scope reference over var. var is used to declare any kind of variable in JS. 
+Major data types of JS:
+number, string, boolean, Object. Everything is object in JS. Arrays, Classes, Functions are all objects. 
+Conventions for naming variables in JS:
+All variables must be declared uniquely. Every variable declared will have a scope bordered by {}. A variable declared in one block cannot be used in an other block. JS uses Scope concept to define the blocks and the variable behavior...
+U could however, define 2 variables with same name differed by its block...
+If a variable is not assigned with any value and refered, it will be undefined. 
+
+Even though, JS does not expect to declare the variable before use, its not a recommended practise. So to enforce the rule of declaration, U could use Strict Mode in JS. 
+"use strict" is declared before the execution of any code. This was introduced in ES5 onwards. 
+
+Variable comparision:
+== and === operator in js.
+== checks only for the value and === checks for both type and value
+
+Operators:
+Arithematic Operators: +, -, /, *
+%: Modulus, ++:increment --:decrement
+
+Manipulating DOM Elements in JS:
+document object is the object that represents the DOM of the HTML page. 
+Elements are accessible in 3 different ways:
+getElementById(id):Gets the single element with the associated ID... 
+getElementsByTagName("p"):gets all the elements by the specified Tag, in this case, the return of this function would be an HTML Collection. 
+getElementsByClassName("edit"): gets all the elements matching to that CSS Class that is specified on those elements. 
+
+ECMA(European Computers Manufacturers Association)
+ES6 version added new features to JS like class, lambda Expressions. improvised Collections.
+class keyword was introduced in ES6.  
+
+
