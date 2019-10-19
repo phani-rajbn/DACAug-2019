@@ -11,22 +11,34 @@ function errorPage(res){
 	res.end();
 }
 
-var dir = __dirname;//builtin variable for UR Current directory....
+var root = __dirname;
 
 http.createServer((req, res)=>{
 	var url = req.url;
-	if(url != "/favicon.ico"){
-		switch(url){
-			case "/":
-				var file = join(dir, "UserRegistration.html");
-				fs.createReadStream(file).pipe(res);//reads the file and pushes the data into the response. 
-				return;
-		 	case "/DAC":
-		 		res.end("<h1>Dac Home Page</h1>");
-		 		return;
-	 		default:
-	 			errorPage(res);
-		}
+if(req.method == "GET"){
+	var query = parse(url).query;//QueryString info.....
+	console.log(query);
+	if(query != null){//The URL Contains a Query String
+		var query = parse(url, true).query;//true will convert the QString to an object..
+		var answer = "Thanks " + query.txtname + "\nUR items will be posted to UR Address at " + query.txtaddress;
+		res.end(answer);
+		return;
 	}
-
+	var filename = parse(url).pathname;
+	console.log(filename);
+	switch(filename){
+		case "/UserRegistration":
+			var file = join(root, filename + ".html");
+			fs.createReadStream(file).pipe(res);
+			return;
+		default:
+		 errorPage(res);
+	}
+}else if(req.method == "POST"){
+	var body = "";
+	req.on("data", function(inputs){
+		body += inputs;
+		res.end(body);
+	})
+}
 }).listen(1234);
