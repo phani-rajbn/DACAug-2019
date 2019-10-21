@@ -1,0 +1,26 @@
+<h1>Employee Monitoring System</h1>
+<hr/>
+<div>
+<h2>Table of Records</h2>
+<table border="1">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Address</th>
+        <th>Options</th>
+    </tr>
+    <tr *ngFor="let emp of employees">
+        <td>{{emp.empId}}</td>
+        <td>{{emp.empName}}</td>
+        <td>{{emp.empAddress}}</td>
+        <td><a href="#" (click)="findEmp(emp.empId)">Edit</a> 
+        <a href="#" (click)="deleteEmployee(emp.empId)">X</a></td>
+    </tr>
+</table>
+</div>
+<div *ngIf="selectedEmp">
+    <h1>Details of Mr.{{selectedEmp.empName}} to edit</h1>
+    <p><input [(ngModel)]="selectedEmp.empName"/></p>
+    <p><input [(ngModel)]="selectedEmp.empAddress"/></p>
+    <p><button (click)="updateEmployee(selectedEmp)">Save</button></p>
+</div>

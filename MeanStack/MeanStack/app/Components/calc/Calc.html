@@ -1,0 +1,25 @@
+<h1>My First Calc Program</h1>
+<p>
+    Enter the First Value:
+    <input type="number" [(ngModel)]="firstValue"/>
+</p>
+<p>
+    Enter the Second Value:
+    <input type="number" [(ngModel)]="secondValue"/>
+</p>
+<p>
+    Select the choice:
+    <select [(ngModel)]="operand">
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+    </select>
+</p>
+<p>
+    <button (click)="process()">Get Result</button>
+</p>
+<p>
+    The Result: <span>{{result}}</span>
+</p>
+
