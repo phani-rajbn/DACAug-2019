@@ -1,0 +1,29 @@
+<h1>Sapna Book House</h1>
+<hr/>
+<div>
+    <h1>List of Books</h1>
+    <input [(ngModel)]="filter" class="search" type="search" placeholder="Search Title"/>
+    <table border="1" width="100%">
+        <tr>
+            <th>BookID</th>
+            <th>BookTitle</th>
+            <th>BookPrice</th>
+            <th>Option</th>
+        </tr>
+        <tr *ngFor="let item of allBooks | title : filter">
+            <td>{{item.id}}</td>
+            <td>{{item.title | uppercase }}</td>
+            <td>{{item.price | currency:'INR'}}</td>
+            <td><a href="#" (click)="delete(item.id)">Delete</a>
+                <a href="#" (click)="edit(item.id)">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h1>New Book Registration</h1>
+    <p><input placeholder="BookID" [(ngModel)]="id"/>  </p>
+    <p><input placeholder="BookTitle" [(ngModel)]="title"/>  </p>
+    <p><input placeholder="BookPrice" [(ngModel)]="price"/>  </p>
+    <button (click)="addBook()">Add Book</button>
+</div>
