@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays in JavaScript</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var students =[];//creating a blank array...
+		var elements = ["Apple","Mango","Orange"];//creating an array with elements in it.
+		elements.push("Pineapple");
+		//push is a method of the array object used to add a new element into the array. It adds the element to the bottom of the list. 
+		elements.push("Banana");
+		for(var i =0; i < elements.length; i++)
+			console.log(elements[i]);
+
+		//foreach is a new syntax in JS to invoke a function on every element found in the array. It uses the concept of callback functions where a function is invoked as each object is selected and passed as argument to the function...
+		elements.forEach(function(element, index){
+			console.log("Element: " + element)
+		})//Array iteration does not go out of bounds. U dont have to know the size of the array. U can iterate only in the forward direction. foreach is well suited for reading the elements of the array rather than setting the values into the array...
+
+		//To remove an element from the array U could use splice method...
+		var index = elements.indexOf("Mango");
+		elements.splice(index, 1);//splice takes 2 args: index of the element from where it should remove and no of elements as the second arg to remove. 
+
+		elements.forEach(function(element, index){
+			document.write("<p>" + element + "</p>");
+		})//If u want to write on the page of the HTML Document, we use document.write. It erases all the content and starts writing again...
+		console.log(typeof(elements));
+		//All arrays are objects in JavaScript which are of the type Array class.  So we could use the Array class constructor to create new Arrays in JS. 
+
+		var data = new Array("Phaniraj","BanuPrakash","Vasu");
+		data.forEach(function(e, i){
+			document.write(e + "<br/>");//br is break in the line so that it moves to the next line...
+		})
+
+		//push method adds the element to the bottom of the list. If U want to add an element to the begining of the array, U could use unshift method...
+		data.unshift("JoyDip Mondal");
+		data.forEach(function(e, i){
+			document.write(e + "<br/>");//br is break in the line so that it moves to the next line...
+		})
+	</script>
+</body>
+</html>
+
+//CRUD Operations: Create, Read, Update and DELETE

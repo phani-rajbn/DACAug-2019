@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var url = "http://localhost:1234/AllEmployees";
+		$(document).ready(function(){
+			$.get(url, function(data){
+				$.each(data, (i, e)=>{
+					var row = "<tr><td>" + e.empId + "</td><td>";
+					row += e.empName + "</td><td>";
+					row += e.empAddress + "</td></tr>";
+					$("table").append(row);
+				})
+			});
+
+			$("button").click(function(){
+				var data ={};
+				data.empId = $("#txtId").val();
+				data.empName = $("#txtName").val();
+				data.empAddress = $("#txtAddr").val();
+				$.post(url, data, function(res){
+					alert(res);
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Employee Address</th>
+		</tr>
+	</table>
+
+	<div>
+		<input id="txtId" placeholder="Enter the ID">
+		<input id="txtName" placeholder="Enter the Name">
+		<input id="txtAddr" placeholder="Enter the Address">
+		<button>Save</button>
+	</div>
+</body>
+</html>
