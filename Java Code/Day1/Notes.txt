@@ -1,0 +1,27 @@
+Core Java Programming:
+java is a gen purpose programming language that is used to develop various kinds of Applications. These apps are targetted on multiple platforms and devices. 
+Apps are nothing but software developed targetting a cetain audience to make their day to day business work easier with lots of automation done like taking data inputs from users, store them in a secured manner and finally render back the data in the precised format as requested by the User of the Application. In this there would a very less posibility of human error.  Apps are usually domain specific and always have a certain common features which are applied in it. 
+------------------------------------------------------------
+java is designed for developers to: "Write once, Run Anywhere(WORA)" which means that U develop the java code that is compiled once and can run on multiple platforms that support java without a need to recompile it. This is called as PLATFORM INDEPENDENCE, one of the main features of java.
+U could create a Java code in Windows and make it run on Unix or a Mac Machine if the machines are provided with appropriate infrastructure. 
+-----------------------------------------------------------
+how it works?
+Java code is developed and saved with extension .java. Java is compiled thro a Java Compiler that can be downloaded from the Oracle website. The compiler compiles the Java code into byte code. This byte code is a machine independent code. The byte code will be files with extension .class. Every class that U create in Java App will generate a .class file. 
+
+The System that wants to run the java program will have an Environment in it called as JRE(Java Runtime Environment) that contains JVM(Java Virtual Machine). When the program is executed on the JRE installed machine, the JVM will again compile the byte code into the native machine code specifically optimized to run on that OS and hardware. The compilation of the Byte code to native code is done by a compiler named JIT Compiler(Just In Time Compiler). The code now becomes platform specific and will run on that system.
+
+What to download?
+Every java program will have 2 sets of Environments: Compile Environment and the Runtime Environment. 
+THe compile time environment contains the Java Compiler called JAVAC and a host of APIs called as Java Libraries. The Java libraries contain ready to use classes and components grouped into packages and distributed as JAR Files.(JAR Files are similar to DLLs of Windows OS). 
+The Runtime Environment(JRE which contains JVM) will be the Environment with specific platform information in it. JRE is different for each kind of OS U R intending to execute UR java code.   
+However for learning purposes, U could download the Java Environment from the Oracle Website that contain all the infrastructure required for development as well as execution. 
+Things to download:
+1. JDK that contain the libraries, APIS and compilers required for the Application development.(JCE)
+2. JRE that contain the infrastructure to execute UR Java Programs.(JRE) 
+
+
+
+
+
+
+
