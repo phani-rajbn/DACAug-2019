@@ -1,0 +1,69 @@
+Advanced Software methodologies:
+A set of tools and design methodologies for developing software that is easily developed, deployed and maintainable. 
+Latest Development methodology is Agile Methodology. Agile is a time boxed, iterative approach to software delivery that builds software incrementally from the start of the project, instead of trying to deliver it all at once near the end.
+It works by breaking projects down into little bits of user functionality called user stories, prioritizing them, and then continuously delivering them in short two week cycles called iterations.
+How does it work?
+Make a list with UR Clients
+Decide on the duration
+Set proirities.
+Start Executing.
+Evaluate and generate reports. 
+Move to the next iteration. 
+
+Analysis, design, coding, and testing are continuous activities. Iterative development means starting with something really simple, and adding to it incrementally over time.
+
+User stories are features our customers might one day like to see in their software.
+Estimation is the time bound based on on ur previous experience and will be relative to the previous iterations that U have done. This style of estimation (relative over absolute) forms the corner stone of Agile Planning. By sizing our stories relatively, and feeding actuals back into our plan, we can make some really accurate predictions about the future while based on what we've done in the past.
+An Agile iteration is a short one to two week period where a team takes a couple of their customers most important user stories and builds them completely as running-tested-software.
+Agile planning is nothing more than measuring the speed a team can turn user stories into working, production-ready software and then using that to figure out when they’ll be done.
+Unit tests are snippets of test code developers write to prove to themselves that what they are developing actually works. Think of them as codified requirements.
+Continuous Integration: Continuous integration is about keeping it all together. On a team of more than one, you are going to have people checking code in all the time. We need a way to make sure that all the code integrates, all the unit tests pass, and a warning if anything goes wrong.
+
+Agile Tools:
+For planning and management point: JIRA. 
+For Code sharing and Version controlling: GIT
+To deployment scenarios : Docker
+To automate continuous integration: JENKINS. 
+To combine multiple Dockers and unit into a full fledged App: Kubenetes. 
+
+This list of comprehensive developement tools for managing the Appp development into small units with both development and operations is what is called as DevOps. 
+ Microservices: When developing Agile Methodology, Ur programs are not huge, they are small self contained units with little or no dependency. Even if they are dependent, it would be loosly coupled components. 
+At its core, microservice architecture involves developing software applications using smaller modular services rather than building software as one, large unified block of code called monoliths. Microservices work independently with other services, giving the software greater flexibility. Yet, well-built microservices can also work together when needed, ensuring end users never feel like their experience is fragmented in any way. It can be built on any technology of Ur choice and make it self contained unit.
+
+Version controlling tool: GIT:
+Version control allows you to keep track of your work and helps you to easily explore the changes you have made, be it data, coding scripts, notes, etc. 
+Keep track of the code history in an easy manner. makes it easy for you to keep track of collaborative and personal projects - all files necessary for certain analyses can be held together and people can add in their code, graphs, etc. as the projects develop.
+Respository:  Repository (repo) as a “master folder”, everything associated with a specific project should be kept in a repo for that project.
+Commit
+Once you’ve saved your files, you need to commit them - this means the changes you have made to files in your repo will be saved as a version of the repo, and your changes are now ready to go up on GitHub (the online copy of the repository).
+
+Pull
+Now, before you send your changes to Github, you need to pull, i.e. make sure you are completely up to date with the latest version of the online version of the files - other people could have been working on them even if you haven’t.
+
+Push
+Once you are up to date, you can push your changes - at this point in time your local copy and the online copy of the files will be the same. 
+
+Commands: 
+How to link the repo to ur git bash
+How to set credentials to ur account.
+How to get the copy of the folders into ur directory.(clone)
+How to initialize git into ur folder. 
+How to commit the new content into the secondary folder. 
+How to push the content of the secondary folder to the remote repo. 
+
+Build the Application by pulling the source code from Git, build it and place it in Docker using JENKINS.
+Clone the source code from the git hub.
+Build the Application using UR App tools.
+Link Jenkins into pull the data from Git folder.
+Place the exe File in the docker container. 
+run the docker.  
+Commands: install the docker
+run the image.
+list the images installed in the docker. 
+run the commands of the image..
+Configure the JENKINS to map to the docker image..
+
+
+
+
+ 
