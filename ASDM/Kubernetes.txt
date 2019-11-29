@@ -1,0 +1,46 @@
+Kubernetes Notes:
+Koob-er-NET-es(k8s) It is the defacto std for deploying containerized applications in private, public and hybrid cloud environments. The popular cloud platforms like AWS, Google cloud, Azure, IBM Cloud and Oracle Cloud provide managed services for Kubernetes.
+Basically its an open source container management tool hosted by Cloud Native Computing Foundation(CNCF). It comes with a capability of automated deployment, scaling of the Apps and operations of application containers across the clusters. 
+More advanced than Docker to host applications from multiple locations into a cloud environment. 
+Features:
+Continuous development, integration and deployment. 
+Like Docker its Containerized infrastructure.
+Application centric Management. 
+Mixing the features of Docker and Jenkins but deployable on cloud.
+It can run application on clusters of physical and virtual machine infrastructure. 
+"It helps in moving from host-centric infrastructure to container centric Infrastructure"
+
+Kubernetes follows client-server architecture. 
+It will have Master server that controls the Application.
+It will be linked to a cluster of machines called as NODES. Each node is a terminal with its own OS and components like Docker, Kubelet and Kubernetes Proxy. Each node represents a Workstation on which a certain part of the Application is developed. 
+
+Components of Kubernetes Master machine:
+etcd: Stores config information which will be used by each node within the cluster. It will have info in the form of key-value store that can be distributed among the nodes of the cluster.
+
+API Servers:
+The Actual Microservices, components are stored in the API server. All the operations of UR application will be cut into independent services and each service is placed into this API Server.
+
+Controller Manager: The controller manager is more like a registry of all the nodes within a cluster. The manager will be responsible for adding and removing nodes, its location resources and is responsible for sending and collecting information from the nodes to the Main server. 
+
+Components of Kubernetes Node:
+Docker: 
+Each node is a Docker which helps in running the encapsulated Application container in a relatively isolated light weight OS.
+Kubelet: Is a small service in each node responsible for relaying info to and from the node. It also manages the network, its rules and port forwarding.  
+Kubernetes proxy service: The proxy service of the Kubernetes runs on each node in making the services available for the external hosts and clients who consume it.
+
+Software required:
+Docker Desktop Installation.
+Enable Kubernetes into the the Docker Desktop. 
+Once the kubernetes is enabled, all the Docker images will be placed into the Kubernetes cluster. Each cluster image is accesible from the command line interface(CLI).  
+ 
+
+
+
+
+
+
+
+
+
+ 
+
