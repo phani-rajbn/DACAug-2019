@@ -23,4 +23,4 @@ void main() {
 	const TestClass science(80);//The const object does not allow to access any function that is modifiable...
 	//science.setNewValue(88);
 	cout << "Score: " << science.getValue() << endl;
-}
+} 
